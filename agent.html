@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RAES Avatar Agent</title>
     <style>
         * {
@@ -11,8 +13,26 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #2a8a8a;
+            background: linear-gradient(135deg, #2a8a8a 0%, #1f6b6b 100%);
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        #did-agent-container {
+            width: 100%;
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,15 +40,18 @@
     </style>
 </head>
 <body>
+    <div class="container">
+        <div id="did-agent-container"></div>
+    </div>
+
     <script type="module"
           src="https://agent.d-id.com/v2/index.js"
-          data-mode="fabio"
+          data-mode="full"
           data-client-key="ck_XYoKm8DegscC7-KX2jikE"
           data-agent-id="v2_agt_lqvZfN8H"
           data-name="did-agent"
-          data-monitor="false"
-          data-orientation="horizontal"
-          data-position="center">
+          data-monitor="true"
+          data-target-id="did-agent-container">
     </script>
 </body>
 </html>
